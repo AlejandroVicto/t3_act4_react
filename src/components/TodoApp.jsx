@@ -7,20 +7,17 @@ import Resumen from './Resumen';
 import Tarea from './Tarea';
 
 const TAREAS_POR_DEFECTO = [
-  { id: 1, texto: 'Terminar conceptos del curso de React', prioridad: 'Alta', fecha: 'Hoy', completada: true },
-  { id: 2, texto: 'Subir tarea a GitHub', prioridad: 'Media', fecha: 'Hoy', completada: true },
-  { id: 3, texto: 'Crear el GitPages', prioridad: 'Alta', fecha: 'Hoy', completada: false },
-  { id: 4, texto: 'Subir en asignacion', prioridad: 'Baja', fecha: 'Mañana', completada: false },
+  { id: 1, texto: 'Terminar conceptos del curso de React', fecha: 'Hoy', completada: true },
+  { id: 2, texto: 'Subir tarea a GitHub', fecha: 'Hoy', completada: true },
+  { id: 3, texto: 'Crear el GitPages', fecha: 'Hoy', completada: false },
+  { id: 4, texto: 'Subir en asignacion', fecha: 'Mañana', completada: false },
 ];
 
 function TodoApp() {
   const [tareas, setTareas] = useState(TAREAS_POR_DEFECTO);
   const [nuevaTarea, setNuevaTarea] = useState('');
-  const [prioridad, setPrioridad] = useState('Media');
   const [filtro, setFiltro] = useState('todas');
-
   const [mostrarNotas, setMostrarNotas] = useState(false);
-
   const [metaDiaria, setMetaDiaria] = useState(4);
 
   const agregarTarea = (e) => {
@@ -30,7 +27,6 @@ function TodoApp() {
     const nueva = {
       id: Date.now(),
       texto: nuevaTarea.trim(),
-      prioridad,
       fecha: 'Hoy',
       completada: false
     };
@@ -47,10 +43,6 @@ function TodoApp() {
 
   const eliminarTarea = (id) => {
     setTareas(prev => prev.filter(t => t.id !== id));
-  };
-
-  const limpiarCompletadas = () => {
-    setTareas(prev => prev.filter(t => !t.completada));
   };
 
   const total = tareas.length;
@@ -101,24 +93,13 @@ function TodoApp() {
       </div>
 
       <form onSubmit={agregarTarea} className="form-nueva-tarea">
-        <div className="input-row">
-          <input
-            type="text"
-            className="input-tarea"
-            placeholder="Agrega una tarea"
-            value={nuevaTarea}
-            onChange={(e) => setNuevaTarea(e.target.value)}
-          />
-          <select
-            value={prioridad}
-            onChange={(e) => setPrioridad(e.target.value)}
-            className="select-prioridad"
-          >
-            <option value="Alta">Prioridad Alta</option>
-            <option value="Media">Prioridad Media</option>
-            <option value="Baja">Prioridad Baja</option>
-          </select>
-        </div>
+        <input
+          type="text"
+          className="input-tarea"
+          placeholder="Agrega una tarea"
+          value={nuevaTarea}
+          onChange={(e) => setNuevaTarea(e.target.value)}
+        />
         <button type="submit" className="btn-agregar">
           + Agregar
         </button>
@@ -148,16 +129,6 @@ function TodoApp() {
             Hechas ({completadas})
           </button>
         </div>
-
-        {completadas > 0 && (
-          <button
-            type="button"
-            className="btn-limpiar"
-            onClick={limpiarCompletadas}
-          >
-            Limpiar hechas
-          </button>
-        )}
       </div>
 
       <div className="lista-contenedor">
@@ -173,7 +144,6 @@ function TodoApp() {
                 id={tarea.id}
                 texto={tarea.texto}
                 completada={tarea.completada}
-                prioridad={tarea.prioridad}
                 fecha={tarea.fecha}
                 onToggle={toggleTarea}
                 onEliminar={eliminarTarea}
@@ -189,7 +159,7 @@ function TodoApp() {
           className="btn-toggle-info"
           onClick={() => setMostrarNotas(prev => !prev)}
         >
-          {mostrarNotas ? 'Ocultar consejos' : ' Ver consejos'}
+          {mostrarNotas ? 'Ocultar consejos' : 'Ver consejos'}
         </button>
 
         {mostrarNotas && (
@@ -198,7 +168,7 @@ function TodoApp() {
               <strong>Técnica Pomodoro:</strong> Trabaja 25 minutos seguidos y descansa 5 minutos.
             </p>
             <p className="nota-item">
-              <strong>Priorización:</strong> Resuelve primero las tareas con etiqueta <em>Alta</em> para reducir estrés.
+              <strong>Organización:</strong> Divide las metas grandes en pequeñas tareas diarias para avanzar más rápido.
             </p>
           </div>
         )}

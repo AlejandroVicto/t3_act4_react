@@ -14,7 +14,7 @@
 
 .todo-app-card {
   background-color: var(--bg-card);
-  border-radius: var(--radius-card);
+  border-radius: 0;
   padding: 2rem 2.2rem;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-light);
@@ -57,7 +57,7 @@
   gap: 0.75rem;
   background-color: var(--bg-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -70,7 +70,7 @@
   display: block;
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--text-title);
+  color: #111827;
   line-height: 1.2;
 }
 
@@ -80,21 +80,13 @@
   color: var(--text-muted);
 }
 
-.stat-pendientes .stat-numero {
-  color: var(--color-warning);
-}
-
-.stat-completadas .stat-numero {
-  color: var(--color-primary);
-}
-
 .meta-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   padding: 0.75rem 1rem;
   margin-bottom: 1.25rem;
   gap: 0.75rem;
@@ -125,7 +117,7 @@
 .btn-counter {
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1px solid var(--border-light);
   background-color: var(--bg-subtle);
   color: var(--text-title);
@@ -159,16 +151,11 @@
   gap: 0.6rem;
 }
 
-.input-row {
-  display: flex;
-  gap: 0.5rem;
-}
-
 .input-tarea {
-  flex: 1;
+  width: 100%;
   background-color: var(--bg-input);
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   padding: 0.75rem 1rem;
   font-size: 0.9rem;
   color: var(--text-body);
@@ -185,27 +172,12 @@
   color: var(--text-light);
 }
 
-.select-prioridad {
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 0.65rem;
-  font-size: 0.82rem;
-  color: var(--text-body);
-  outline: none;
-  cursor: pointer;
-}
-
-.select-prioridad:focus {
-  border-color: var(--border-focus);
-}
-
 .btn-agregar {
   width: 100%;
   background-color: var(--color-primary);
   color: #ffffff;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   padding: 0.75rem 1rem;
   font-size: 0.9rem;
   font-weight: 600;
@@ -242,8 +214,8 @@
   color: var(--text-muted);
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 0.3rem 0.65rem;
-  border-radius: 9999px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -256,22 +228,6 @@
 .btn-filtro.activo {
   background-color: var(--color-primary-light);
   color: var(--color-primary);
-}
-
-.btn-limpiar {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.15s ease;
-}
-
-.btn-limpiar:hover {
-  color: var(--color-danger);
 }
 
 .lista-contenedor {
@@ -292,7 +248,7 @@
   gap: 0.75rem;
   background-color: var(--bg-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   padding: 0.8rem 0.95rem;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
@@ -314,8 +270,8 @@
 
 .tarea-checkbox-wrapper {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -330,9 +286,9 @@
 }
 
 .tarea-custom-check {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
   border: 1.5px solid #cbd5e1;
   background-color: #ffffff;
   display: flex;
@@ -361,34 +317,6 @@
   word-break: break-word;
 }
 
-.tarea-subinfo {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.badge-prioridad {
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-}
-
-.prioridad-alta {
-  background-color: #fef2f2;
-  color: #b91c1c;
-}
-
-.prioridad-media {
-  background-color: #fffbeb;
-  color: #b45309;
-}
-
-.prioridad-baja {
-  background-color: #f0fdf4;
-  color: #15803d;
-}
-
 .tarea-fecha {
   font-size: 0.72rem;
   color: var(--text-light);
@@ -400,7 +328,7 @@
   color: var(--text-light);
   cursor: pointer;
   padding: 0.3rem;
-  border-radius: 4px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -448,7 +376,7 @@
 .panel-notas-reveal {
   margin-top: 0.65rem;
   background-color: var(--color-primary-light);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   padding: 0.85rem 1rem;
   font-size: 0.8rem;
   color: var(--color-primary-hover);
@@ -476,15 +404,7 @@
 @media (max-width: 480px) {
   .todo-app-card {
     padding: 1.5rem 1.25rem;
-    border-radius: 20px;
-  }
-
-  .input-row {
-    flex-direction: column;
-  }
-
-  .select-prioridad {
-    width: 100%;
+    border-radius: 0;
   }
 
   .toolbar-tareas {

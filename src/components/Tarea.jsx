@@ -2,7 +2,6 @@ function Tarea({
   id,
   texto,
   completada,
-  prioridad = "Media",
   fecha = "Hoy",
   onToggle,
   onEliminar
@@ -26,12 +25,7 @@ function Tarea({
 
       <div className="tarea-info" onClick={() => onToggle(id)}>
         <span className="tarea-texto">{texto}</span>
-        <div className="tarea-subinfo">
-          <span className={`badge-prioridad prioridad-${prioridad.toLowerCase()}`}>
-            {prioridad}
-          </span>
-          <span className="tarea-fecha">{fecha}</span>
-        </div>
+        <span className="tarea-fecha">{fecha}</span>
       </div>
 
       <button
